@@ -1,0 +1,381 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "atlres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_WALL                BITMAP  DISCARDABLE     "res\\wall.bmp"
+IDB_BACKGROUND          BITMAP  DISCARDABLE     "res\\background.bmp"
+IDB_BOX                 BITMAP  DISCARDABLE     "res\\box.bmp"
+IDB_BOX_IN              BITMAP  DISCARDABLE     "res\\box_in.bmp"
+IDB_DESTINATION         BITMAP  DISCARDABLE     "res\\destination.bmp"
+IDB_FLOOR               BITMAP  DISCARDABLE     "res\\floor.bmp"
+IDB_MAN_DOWN            BITMAP  DISCARDABLE     "res\\man_down.bmp"
+IDB_MAN_LEFT            BITMAP  DISCARDABLE     "res\\man_left.bmp"
+IDB_MAN_RIGHT           BITMAP  DISCARDABLE     "res\\man_right.bmp"
+IDB_MAN_UP              BITMAP  DISCARDABLE     "res\\man_up.bmp"
+IDB_MAN                 BITMAP  DISCARDABLE     "res\\man.bmp"
+IDB_VERIFY              BITMAP  DISCARDABLE     "res\\verifier.BMP"
+IDB_BACK                BITMAP  DISCARDABLE     "res\\back.BMP"
+IDB_FORWARD             BITMAP  DISCARDABLE     "res\\forward.BMP"
+IDB_PLAY                BITMAP  DISCARDABLE     "res\\play.BMP"
+IDB_SAVE                BITMAP  DISCARDABLE     "res\\save.BMP"
+IDR_TB_GAME             BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+IDB_SAVE_RECORD         BITMAP  DISCARDABLE     "res\\save_record_256.bmp"
+IDB_PAUSE               BITMAP  DISCARDABLE     "res\\pause.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TB_GAME TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_GAME_BACK
+    BUTTON      ID_GAME_FORWARD
+    SEPARATOR
+    BUTTON      ID_GAME_SAVE
+    BUTTON      ID_GAME_OPEN
+    SEPARATOR
+    BUTTON      ID_GAME_PLAY
+    BUTTON      ID_GAME_STOP
+    BUTTON      ID_GAME_PAUSE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 226, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About"
+FONT 10, "新宋体", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,169,63,50,14
+    CTEXT           "搬运工 - Xman",IDC_STATIC,28,19,53,8
+    ICON            IDR_BOXMAN_ICON,IDC_STATIC,7,7,18,20
+    EDITTEXT        IDC_ABOUT,7,32,145,45,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    WS_DISABLED | NOT WS_BORDER,WS_EX_STATICEDGE
+END
+
+IDD_SELECT_PASS DIALOG DISCARDABLE  0, 0, 199, 27
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 12, "新宋体"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDC_OK,116,7,37,13
+    EDITTEXT        IDC_EDIT_PASS_NO,73,7,27,13,ES_AUTOHSCROLL
+    CONTROL         "Spin2",IDC_SPIN_PASS_NO,"msctls_updown32",UDS_ARROWKEYS,
+                    100,7,12,13
+    PUSHBUTTON      "Cancel",IDC_CANCEL,155,7,37,13
+    LTEXT           "关卡数量: ",IDC_STATIC_TIPS,7,10,52,8,SS_CENTERIMAGE
+END
+
+IDD_INFO DIALOG DISCARDABLE  0, 0, 283, 52
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 10, "宋体"
+BEGIN
+    LTEXT           "info",IDC_STATIC_INFO,7,6,269,32
+    RTEXT           "tips",IDC_STATIC_TIPS,106,42,170,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_SELECT_PASS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 192
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 20
+    END
+
+    IDD_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 276
+        TOPMARGIN, 8
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_BOXMAN_MENU MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "游戏"
+    BEGIN
+        MENUITEM "开始游戏",                    ID_GAME_START
+        MENUITEM "加载指定关卡...",             ID_GAME_LOAD
+        MENUITEM SEPARATOR
+        MENUITEM "播放游戏录像...",             ID_TB_GAME_PLAY
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        ID_APP_EXIT
+    END
+    POPUP "编辑关卡"
+    BEGIN
+        MENUITEM "添加新关",                    ID_EDIT_MAP_NEW
+        MENUITEM "编辑现有关卡...",             ID_EDIT_MAP
+        MENUITEM "import maps...",              ID_EDIT_MAP_IMPORT, GRAYED
+    END
+    POPUP "可推动箱子数目"
+    BEGIN
+        MENUITEM "1个 (正常人)",                ID_FORCE_LEVEL_1, CHECKED
+        MENUITEM "2个 (不一般)",                ID_FORCE_LEVEL_2
+        MENUITEM "3个 (强人)",                  ID_FORCE_LEVEL_3
+        MENUITEM SEPARATOR
+        MENUITEM "数目不限 (非正常人类)",       ID_FORCE_NO_LIMIT
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "关于...",                     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "搬箱子"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "关于..."
+    ID_APP_EXIT             "退出游戏"
+    IDS_MAP_SELECTED        "选择的地图元素:"
+    IDS_MAP_TIP_DRAW_SINGLE "单格画图: 选择地图元素,鼠标左键点击网格"
+    IDS_MAP_TIP_DRAW_CONTINUIOUS "连续画图: 选择地图元素, 按住鼠标左键拖动."
+    IDS_MAP_TIP_ERASE_SINGLE "单格擦除: 鼠标右键点击网格"
+    IDS_MAP_TIP_ERASE_CONTINUIOUS "连续擦除: 按住鼠标右键拖动"
+    IDS_GAME_BACK           "回退: Ctrl + Z"
+    IDS_GAME_FORWARD        "恢复回退: Ctrl + Y"
+    IDS_GAME_STEPS          "已行走步数:"
+    IDS_GAME_SAVE           "将游戏过程保存成录像文件"
+    IDS_GAME_PLAY           "播放"
+    IDS_CURRENT_SELECTED    "当前选择的地图元素:"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DESTINATION         "箱子目的地"
+    IDS_MAN                 "boxman(搬运工)"
+    IDS_BOX                 "箱子(需要被推至箱子目的地)"
+    IDS_FLOOR               "地板"
+    IDS_WALL                "墙"
+    IDS_MAP_SAVE            "保存地图"
+    IDS_MAP_VERIFY          "检查地图是否符合搬运工地图规则"
+    IDS_MAP_RULE            "规则:\r\n1. 有且只有一个搬运工; \r\n2. 箱子的数量和目的地数目相等"
+    IDS_ABOUT               "\r\n Version:    1.0\r\n Written by: lilong'en\r\n\r\n 2003.8"
+    IDS_INSTRUCTION         "游戏说明"
+    IDS_INFO                "信息"
+    IDS_GAME_OPEN           "打开游戏录像文件并播放"
+    IDS_GAME_STOP           "停止"
+    IDS_GAME_PAUSE          "暂停"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MAP_IS_LEGAL        "关卡符合地图规则, 现在可以保存当前编辑关卡"
+    IDS_MAP_IS_NOT_LEGAL    "关卡不符合地图则,请检查."
+    IDS_GAME_FINISHED       "恭喜您, 已搬完本关, 辛苦了!  按 Enter 键进入下一关..."
+    IDS_GAME_FINISHED_ALL   "您已经搬完所有关卡!  此致,敬礼!!"
+    IDS_CLOSE_INFO_DLG_TIPS "按 ESC 或者鼠标左键双击关闭对话框..."
+    IDS_GAME_CONTINUE_TIPS  "按 Enter 键继续游戏..."
+    IDS_PLAY_PASS_UPDATED   "该关地图已经被修改, 录像文件不能播放."
+    IDS_GAME_RECORD_TIPS    "可将游戏过程保存成录像文件, 打开已保存的录像文件可观看游戏录像."
+    IDS_NO_MAP              "游戏地图文件损坏,或者地图库没有游戏地图."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TB_EDIT_MAP         BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TB_EDIT_MAP TOOLBAR DISCARDABLE  32, 32
+BEGIN
+    BUTTON      ID_MAP_MAN
+    SEPARATOR
+    BUTTON      ID_MAP_BOX
+    BUTTON      ID_MAP_FLOOR
+    BUTTON      ID_MAP_DESTINATION
+    BUTTON      ID_MAP_WALL
+    SEPARATOR
+    BUTTON      ID_MAP_SAVE
+    BUTTON      ID_MAP_VERIFY
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST ""res\\\\boxman.exe.manifest""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_BOXMAN_ICON         ICON    DISCARDABLE     "res\\boxman.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_XMAN_ACCELERATOR ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "S",            ID_GAME_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "Y",            ID_CONTROL_FORWARD,     VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_CONTROL_BACK,        VIRTKEY, CONTROL, NOINVERT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "boxman Module\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "boxman\0"
+            VALUE "LegalCopyright", "Copyright 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "boxman.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "boxman Module\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "res\\boxman.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
